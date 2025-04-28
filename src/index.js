@@ -77,15 +77,14 @@ class GeoRaster {
       this._data = data;
       this.rasterType = 'geotiff';
       this.sourceType = 'ArrayBuffer';
-      this._metadata = metadata;
     } else if (Array.isArray(data) && metadata) {
       this._data = data;
       this.rasterType = 'object';
-      this._metadata = metadata;
     }
     if ( metadata && metadata.readOnDemand !== undefined ) {
       this.readOnDemand = metadata.readOnDemand;
     }
+    this._metadata = metadata;
 
     if (debug) console.log('this after construction:', this);
   }
